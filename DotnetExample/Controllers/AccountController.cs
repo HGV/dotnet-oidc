@@ -14,7 +14,6 @@ namespace DotnetExample.Controllers
             return View();
         }
 
-       
         public IActionResult Login(string returnUrl = "https://localhost:44343/")
         {
             return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
