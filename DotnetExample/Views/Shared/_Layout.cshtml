@@ -42,8 +42,14 @@
     <div class="container">
         <partial name="_CookieConsentPartial" />
 
-        <a asp-action="Login" asp-controller="Account" class="btn">Log In with HGV</a>
-
+        @if (!User.Identity.IsAuthenticated)
+        {
+            <a asp-action="Login" asp-controller="Account" class="btn">Log In with HGV</a>
+        }
+        else
+        {
+            <a asp-action="Logout" asp-controller="Account" class="btn">Log out</a>
+        }
 
         <main role="main" class="pb-3">
             @RenderBody()

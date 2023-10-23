@@ -14,5 +14,10 @@ namespace DotnetExample.Controllers
         {
             return Challenge(new AuthenticationProperties() { RedirectUri = returnUrl });
         }
+
+        public IActionResult Logout()
+        {
+            return SignOut(new AuthenticationProperties { RedirectUri = "/" });
+        }
     }
 }
